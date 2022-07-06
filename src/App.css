@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+}
+
+header{
+  width: auto;
+  display: inline-flex;
+  margin-top: 2%;
+}
+
+body{
+  /* background image and colour */
+  background-image: url('../public/img/fit_for_rivals.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: rgb(0, 0, 0);
+
+  /* text */
+  color: white;
+}
+
+#root{
+  margin-left: 5%;
+}
+
+#logo{
+  height: 10vh;
+}
+
+.album_cover {
+  height: 25vh;
+  pointer-events: none;
+}
+
+.album_title {
+  font-size: 35px;
+}
+
+.album_song_list{
+  list-style-type: none;
+}
+
+li{
+  border-bottom: 1px rgba(255, 255, 255, 0.4) solid;
+}
+
+.album{
+  width: 80vw;
+  margin-top: 5%;
+  margin-right: auto;
+  justify-self: center;
+}
+
+.album div{
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 80%;
+  display: inline-flex;
+  border-radius: 5%;
+  max-width: 70vw;
+  min-width: 45vw;
+  margin-left: auto;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

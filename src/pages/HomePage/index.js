@@ -1,18 +1,18 @@
-import React from 'react';
-import { CreateAlbum } from '../../components';
+import React, {useContext} from 'react';
+import { AlbumContext } from '../../AlbumContext';
+import { CreateAlbum, FetchApiData } from '../../components';
 
-
-const HomePage = ({albumInstances}) => {
-
-    return(
+const HomePage = () => {
+    return(   
         <>
+            <FetchApiData/>
             <h1>Home page</h1>
             <div id='album-list'>
-                <CreateAlbum albumInstances={albumInstances}/> 
-                {/* <CreateAlbum setApiResponseArr={setApiResponseArr} apiResponseArr={apiResponseArr}/> */}
+                <CreateAlbum/>
             </div>
         </>
-    )
+    );
+
 }
 
 export default HomePage;

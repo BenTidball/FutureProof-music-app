@@ -1,40 +1,34 @@
-import React, {useEffect} from 'react';
-import RequestData from "../RequestData";
+import React, {useContext} from 'react';
+import { AlbumContext } from '../../AlbumContext';
 import CreateSongList from "../CreateSongList";
 
-//generate sections containing elements for album data
-// function CreateAlbum({setApiResponseArr, apiResponseArr}){
-
-//     useEffect(() => {
-//         <RequestData setApiResponseArr={setApiResponseArr}/>
-//         console.log(apiResponseArr);
-//     }, []);
-
-
-// };
-
-function CreateAlbum({albumInstances}){
+function CreateAlbum(){
+    const [trackData, setTrackData] = useContext(AlbumContext);
     let instances = [];
 
-    albumInstances.forEach(album => {
-        //store each album instance
-        instances.push(
-            <section className='album'>
-                <div>
-                <span>
-                    <h2 className='album_title'>{album.album}</h2>
-                    <img className='album_cover' src={album.albumCover} alt={`${album.name} album cover`}/>
-                </span>
-                <ul className='album_song_list'>
-                    <h2 key={0}>Song List</h2>
-                    {/* create song list from album */}
-                    <CreateSongList album={album}/>
-                </ul>
-                </div>
-            </section>
-        );
-    });
+    if(trackData){
+        // console.warn(trackData);
 
+        trackData.forEach(album => {
+            //Each album
+            instances.push(
+                <section className='album'>
+                    <div>
+                        <span>
+                            <h2 className='album_title'>{album.name}</h2>
+                            <img className='album_cover' src={album.image[2]["#text"]} alt={`${album.name} album cover`}/>
+                        </span>
+                        <ul className='album_song_list'>
+                            <h2>Song List</h2>
+                            {/* create song list from album */}
+                            <CreateSongList track={album.tracks.track}/> 
+                        </ul>
+                    </div>
+                </section>
+            )
+        });
+
+    };
     return instances;
 };
 

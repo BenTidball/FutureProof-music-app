@@ -8,9 +8,13 @@ header{
   margin-top: 2%;
 }
 
+footer{
+  margin-top: 100px;
+}
+
 body{
   /* background image and colour */
-  background-image: url('../public/img/fit_for_rivals.jpg');
+  background-image: url('img/fit_for_rivals.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;
@@ -56,15 +60,22 @@ li{
 .album div{
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 80%;
-  display: inline-flex;
   border-radius: 5%;
   max-width: 70vw;
   min-width: 45vw;
-  margin-left: auto;
-
+  
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 2%;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 70%;
+}
+
+.album div ul{
+  padding-right: min(10vw);
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,10 +1,12 @@
 import React from "react";
+import { AlbumContext } from "../../AlbumContext";
+import logo from '../../img/logo.png'
 
-function CreateBio({bandData}){
+function CreateBio(){
     return(
         <>
-            <img id='logo' src={bandData[0].logo} alt='logo'/>
-            <h1>{bandData[0].bandName}</h1>
+            <img id='logo' src={logo} alt='logo'/>
+            <h1>Fit For Rivals</h1>
         </>
     );
 };

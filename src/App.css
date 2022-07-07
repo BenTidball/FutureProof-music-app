@@ -14,13 +14,29 @@ nav{
   font-size: 30px;
 }
 
+.nav-link{
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-left: 20px;
+
+  /* text outline */
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
 footer{
   margin-top: 100px;
 }
 
+h1{
+  /* text outline */
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 40px;
+}
+
 body{
   /* background image and colour */
-  background-image: url('img/fit_for_rivals.jpg');
+  background-image: url('img/smoke3.PNG');
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;
@@ -41,7 +57,20 @@ body{
 
 .album_cover {
   height: 40vh;
-  pointer-events: none;
+
+  /* Hide button */
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.album_cover img{
+  height: 40vh;
+  border: 2px solid white;
 }
 
 .album_title {

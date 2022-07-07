@@ -1,16 +1,23 @@
 import React from "react";
 
 function CreateSongList({track}){
-    let songs = [];
-
-    //iterate through each album song list and create a list item element displaying the data of the song
+    let tracks = [];
     let counter = 0;
-    track.forEach(song => {
-        songs.push(
-            <li className='album_song' key={counter}> # {song.name} - {durationConvert(song.duration)}</li>
+
+    //album contains single track
+    if(track.name){
+        tracks.push(
+            <li className='album_song' key={counter}> # {track.name} - {durationConvert(track.duration)}</li>
         );
-        counter++;
-    });
+    }else{
+        //iterate through each album track and create a list item element displaying the data of the track
+        track.forEach(song => {
+            tracks.push(
+                <li className='album_song' key={counter}> # {song.name} - {durationConvert(song.duration)}</li>
+            );
+            counter++;
+        });
+    }
 
     function durationConvert(num)
     { 
@@ -18,7 +25,7 @@ function CreateSongList({track}){
         return result
     }
 
-    return songs;
+    return tracks;
 }
 
 export default CreateSongList;

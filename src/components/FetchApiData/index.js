@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import { AlbumContext } from '../../AlbumContext';
 
 //Test url
-//http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=899b705b0f0f7af07b0b21d62d724af6&artist=Fit+For+Rivals&album=Steady+Damage&format=json
+//http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=899b705b0f0f7af07b0b21d62d724af6&artist=Fit+For+Rivals&album=Wake+the+Dead&format=json
 
 const api_key = '899b705b0f0f7af07b0b21d62d724af6';
 const artist = 'Fit+For+Rivals';
@@ -12,9 +12,9 @@ function FetchApiData(){
     let albumsData = [];
     let finalResponse = false;
 
-    // Steady Damage
+    // Freak Machine
     const fetchAlbumData1 = async () => {
-        const album = 'Steady+Damage';
+        const album = 'Freak+Machine';
         const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
     
         try{
@@ -40,8 +40,35 @@ function FetchApiData(){
         fetchAlbumData2();
     }
 
-    // Sugar
+    // Steady Damage
     const fetchAlbumData2 = async () => {
+        const album = 'Steady+Damage';
+        const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
+    
+        try{
+            const response = await fetch(url, {
+                method: 'GET',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+            
+            if(response.ok){
+                let data = [];
+                data = await response.json();
+                albumsData.push(data.album);
+            }
+            
+        }catch (err){
+            console.warn(err);
+        }
+        fetchAlbumData3();
+    }
+
+    // Sugar
+    const fetchAlbumData3 = async () => {
         const album = 'Sugar';
         const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
     
@@ -59,7 +86,7 @@ function FetchApiData(){
                 let data = [];
                 data = await response.json();
                 albumsData.push(data.album);
-                fetchAlbumData3();
+                fetchAlbumData4();
             }
 
         }catch (err){
@@ -67,9 +94,9 @@ function FetchApiData(){
         }
     }
 
-    // Freak Machine
-    const fetchAlbumData3 = async () => {
-        const album = 'Freak+Machine';
+    // Wake The Dead 
+    const fetchAlbumData4 = async () => {
+        const album = 'Wake+the+Dead';
         const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
     
         try{

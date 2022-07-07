@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import { AlbumContext } from '../../AlbumContext';
+import React from 'react';
 import { CreateAlbum, FetchApiData } from '../../components';
 
 const HomePage = () => {

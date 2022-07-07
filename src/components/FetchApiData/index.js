@@ -1,6 +1,5 @@
-import React, {useContext, useState} from 'react';
+import {useContext} from 'react';
 import { AlbumContext } from '../../AlbumContext';
-import CreateSongList from "../CreateSongList";
 
 //Test url
 //http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=899b705b0f0f7af07b0b21d62d724af6&artist=Fit+For+Rivals&album=Steady+Damage&format=json

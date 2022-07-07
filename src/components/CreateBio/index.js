@@ -1,5 +1,4 @@
 import React from "react";
-import { AlbumContext } from "../../AlbumContext";
 import logo from '../../img/logo.png'
 
 function CreateBio(){

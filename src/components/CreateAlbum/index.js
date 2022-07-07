@@ -3,7 +3,7 @@ import { AlbumContext } from '../../AlbumContext';
 import CreateSongList from "../CreateSongList";
 
 function CreateAlbum(){
-    const [trackData, setTrackData] = useContext(AlbumContext);
+    const [trackData] = useContext(AlbumContext);
     let instances = [];
 
     if(trackData){

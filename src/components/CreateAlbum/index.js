@@ -9,14 +9,15 @@ function CreateAlbum(){
     if(trackData){
         // console.warn(trackData);
 
+        let counter = 0;
         trackData.forEach(album => {
             //Each album
             instances.push(
-                <section className='album'>
+                <section className='album' key={counter}>
                     <div>
                         <span>
                             <h2 className='album_title'>{album.name}</h2>
-                            <img className='album_cover' src={album.image[2]["#text"]} alt={`${album.name} album cover`}/>
+                            <img className='album_cover' src={album.image[3]["#text"]} alt={`${album.name} album cover`}/>
                         </span>
                         <ul className='album_song_list'>
                             <h2>Song List</h2>
@@ -26,6 +27,7 @@ function CreateAlbum(){
                     </div>
                 </section>
             )
+            counter++;
         });
 
     };

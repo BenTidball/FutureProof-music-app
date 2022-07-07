@@ -19,12 +19,12 @@ function FetchApiData(){
     
         try{
             const response = await fetch(url, {
-            method: 'GET',
-            cache: 'no-cache',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
+                method: 'GET',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
             })
             
             if(response.ok){
@@ -36,6 +36,7 @@ function FetchApiData(){
         }catch (err){
             console.warn(err);
         }
+        
         fetchAlbumData2();
     }
 
@@ -46,12 +47,39 @@ function FetchApiData(){
     
         try{
             const response = await fetch(url, {
-            method: 'GET',
-            cache: 'no-cache',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                method: 'GET',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+            
+            if(response.ok){
+                let data = [];
+                data = await response.json();
+                albumsData.push(data.album);
+                fetchAlbumData3();
             }
+
+        }catch (err){
+            console.warn(err);
+        }
+    }
+
+    // Freak Machine
+    const fetchAlbumData3 = async () => {
+        const album = 'Freak+Machine';
+        const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
+    
+        try{
+            const response = await fetch(url, {
+                method: 'GET',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
             })
             
             if(response.ok){

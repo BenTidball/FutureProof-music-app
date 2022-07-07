@@ -4,8 +4,14 @@
 
 header{
   width: auto;
-  display: inline-flex;
+  display: flex;
   margin-top: 2%;
+}
+
+nav{
+  margin-left: auto;
+  margin-right: 20px;
+  font-size: 30px;
 }
 
 footer{
@@ -34,7 +40,7 @@ body{
 }
 
 .album_cover {
-  height: 25vh;
+  height: 40vh;
   pointer-events: none;
 }
 
@@ -47,7 +53,12 @@ body{
 }
 
 li{
-  border-bottom: 1px rgba(255, 255, 255, 0.4) solid;
+  text-decoration: underline rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+}
+
+li:hover{
+  cursor: pointer;
 }
 
 .album{
@@ -70,12 +81,8 @@ li{
   
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  width: 70%;
-}
-
-.album div ul{
-  padding-right: min(10vw);
+  grid-gap: 0px;
+  max-width: 55vw;
 }
 
 @media (prefers-reduced-motion: no-preference) {

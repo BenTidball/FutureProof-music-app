@@ -36,7 +36,7 @@ h1{
 
 body{
   /* background image and colour */
-  background-image: url('img/smoke3.PNG');
+  /* background-image: url('img/smoke3.PNG'); */
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;

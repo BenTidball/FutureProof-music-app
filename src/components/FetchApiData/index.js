@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useEffect} from 'react';
 import { AlbumContext } from '../../AlbumContext';
 
 //Test url
@@ -16,7 +16,7 @@ function FetchApiData(){
     const fetchAlbumData1 = async () => {
         const album = 'Freak+Machine';
         const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
-    
+
         try{
             const response = await fetch(url, {
                 method: 'GET',
@@ -26,7 +26,7 @@ function FetchApiData(){
                     'Content-Type': 'application/json'
                 }
             })
-            
+
             if(response.ok){
                 let data = [];
                 data = await response.json();
@@ -36,7 +36,7 @@ function FetchApiData(){
         }catch (err){
             console.warn(err);
         }
-        
+
         fetchAlbumData2();
     }
 
@@ -54,13 +54,13 @@ function FetchApiData(){
                     'Content-Type': 'application/json'
                 }
             })
-            
+
             if(response.ok){
                 let data = [];
                 data = await response.json();
                 albumsData.push(data.album);
             }
-            
+
         }catch (err){
             console.warn(err);
         }
@@ -71,7 +71,7 @@ function FetchApiData(){
     const fetchAlbumData3 = async () => {
         const album = 'Sugar';
         const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
-    
+
         try{
             const response = await fetch(url, {
                 method: 'GET',
@@ -81,7 +81,7 @@ function FetchApiData(){
                     'Content-Type': 'application/json'
                 }
             })
-            
+
             if(response.ok){
                 let data = [];
                 data = await response.json();
@@ -98,7 +98,7 @@ function FetchApiData(){
     const fetchAlbumData4 = async () => {
         const album = 'Wake+the+Dead';
         const url = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${api_key}&artist=${artist}&album=${album}&format=json`;
-    
+
         try{
             const response = await fetch(url, {
                 method: 'GET',
@@ -108,7 +108,7 @@ function FetchApiData(){
                     'Content-Type': 'application/json'
                 }
             })
-            
+
             if(response.ok){
                 let data = [];
                 data = await response.json();
@@ -127,9 +127,9 @@ function FetchApiData(){
     }
 
     //prevent api for continuously updating array
-    if(!trackData){
+    useEffect(()=> {
         fetchAlbumData1();
-    }
+    }, []);
 
     return;
 }

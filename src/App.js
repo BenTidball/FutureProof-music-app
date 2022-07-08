@@ -1,6 +1,6 @@
 import React  from 'react';
 import {Route, Routes} from "react-router-dom";
-import {CreateBio} from './components';
+import {CreateBio, Background} from './components';
 import {HomePage, AboutPage} from './pages';
 import { AlbumProvider } from './AlbumContext';
 import { default as Layout } from './Layouts';
@@ -9,6 +9,7 @@ import './App.css';
 function App() {
   return (
     <>
+      <Background/>
       <header id='title'>
         <CreateBio/>
         <Layout/>

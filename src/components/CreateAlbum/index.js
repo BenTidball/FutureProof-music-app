@@ -7,7 +7,6 @@ function CreateAlbum(){
     let instances = [];
 
     if(trackData){
-        // console.warn(trackData);
 
         let counter = 0;
         trackData.forEach(album => {
@@ -29,11 +28,12 @@ function CreateAlbum(){
                                 <CreateSongList track={album.tracks.track}/>
                             </ul>
                             <em>Listeners: {album.listeners} _ PlayCount: {album.playcount}</em>
-                            {album.tags == "" ? null : <em>Tag: {album.tags}</em>}
+                            {album.tags === "" ? null : <em>Tag: {album.tags}</em>}
                         </div>
                     </section>
                 )
                 counter++;
+
             }else{
                 //Each album
                 instances.push(
@@ -61,5 +61,4 @@ function CreateAlbum(){
     };
     return instances;
 };
-
 export default CreateAlbum;

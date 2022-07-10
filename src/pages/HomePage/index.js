@@ -6,7 +6,7 @@ const HomePage = () => {
     return(   
         <>
             <FetchApiData/>
-            <h1>Albums</h1>
+            <h1 id='pageTitle'>Albums</h1>
             <div id='album-list'>
                 <CreateAlbum/>
             </div>

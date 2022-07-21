@@ -19,7 +19,7 @@ function CreateAlbum(){
                             <span>
                                 <h2 className='album_title'>{album.name}</h2>
                                 <button className='album_cover' onClick={() => {window.open(album.url, '_blank')}}>
-                                    <img  src={album.image[3]["#text"]} alt={`${album.name} album cover`} data-album-url={album.url}/>
+                                    <img src={album.image[3]["#text"]} alt={`${album.name} album cover`} data-album-url={album.url}/>
                                 </button>
                             </span>
                             <ul className='album_song_list'>
